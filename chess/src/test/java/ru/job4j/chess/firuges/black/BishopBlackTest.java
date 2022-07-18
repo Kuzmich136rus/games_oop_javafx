@@ -24,16 +24,17 @@ public class BishopBlackTest {
         Cell actual = rsl.position();
         assertEquals(expected, actual);
     }
+
     @Test
     public void ifStartPositionC1FinishG5ThenWayD2E3F4G5() {
         BishopBlack bishopBlack = new BishopBlack(Cell.C1);
         Cell[] actual = bishopBlack.way(Cell.G5);
         Cell[] expected = {Cell.D2, Cell.E3, Cell.F4, Cell.G5};
-        assertArrayEquals(expected,actual);
+        assertArrayEquals(expected, actual);
     }
 
     @Test (expected = ImpossibleMoveException.class)
-    public void ifWayImpossible(){
+    public void ifWayImpossible() {
         BishopBlack one = new BishopBlack(Cell.C1);
         one.way(Cell.G4);
     }
